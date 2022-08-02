@@ -223,3 +223,16 @@ function addAllFamilyLuckyNumbers(anArray){
 }
 person.lucky_numbers[3] = 33;
 console.log(addAllFamilyLuckyNumbers(family.members)); 
+////17
+const rapid = (myString) => {
+    let consonants = [];
+    for(let letter of myString){
+        if(['a','e','i','o','u'].includes(letter) == false)
+            consonants.push(letter);
+    }
+    let newVar = consonants.join('');
+    return newVar.toUpperCase();
+};
+let str = "John";
+console.log(rapid(str));
+////
