@@ -127,3 +127,51 @@ for (let time = 1; time < 6; time++) {
     player1Results.Cards.push(cards);
 }
 console.log(player1Results);
+
+
+////6
+//Choose a card when certain value es reached
+
+function chooseCard2 () {
+    const faceValues = ["A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"];
+    //Recorrer el arreglo
+    let _faceValue = faceValues[faceValues.length - 1];
+    for (faceValue of faceValues) {
+        //Entre cada iteración generar un valor entre 0 y 1
+        const value = Math.random();
+        console.log(`Para la carta ${faceValue} se obtuvo el valor ${value}`);
+        if (value >= 0.9) {
+            _faceValue = faceValue;
+            break;
+        }
+        //Si value < 0.9 sigo con la siguiente carta
+        //Por defecto devuelvo 2
+    }
+    return _faceValue;
+};
+console.log(chooseCard2());
+
+////7
+//Reading with for in
+
+const teams = [`australia`, `italia`, `bélgica`, `venezuela`, `perú`, `argentina`];
+for (let index in teams) {
+    console.log(index);
+    console.log(teams[index]);
+};
+const dog = {
+    name: `wotuja`,
+    breed: `retriever`,
+    age: 1
+};
+for (let atribute in dog) {
+    console.log(atribute);
+    console.log(dog[atribute]);
+};
+for (let [key, value] of Object.entries(dog)) {
+    console.log(`${key}:${value}`);
+}
+
+
+////8
+//
