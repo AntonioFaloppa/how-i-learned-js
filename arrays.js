@@ -170,8 +170,72 @@ for (let atribute in dog) {
 };
 for (let [key, value] of Object.entries(dog)) {
     console.log(`${key}:${value}`);
-}
+};
 
 
 ////8
-//
+//Using forEach two ways to do it
+
+const team2 = [`australia`, `italia`, `bélgica`, `venezuela`, `perú`, `argentina`];
+function consoleProbability (_team2) {
+    console.log(`${_team2} tiene una probabilidad de ${(Math.random()* 100).toFixed(2)}%`);
+};
+team2.forEach(consoleProbability);
+
+team2.forEach(function(team){
+    console.log(`${team} tiene una probabilidad de ${(Math.random()* 100).toFixed(2)}%`);
+});
+//In case you want to use the index and the array for some reason
+team2.forEach((team, index, _team) => {
+    console.log(index);
+    if (index > _team.length/2) return;
+    console.log(`${team} tiene una probabilidad de ${(Math.random()* 100).toFixed(2)}%`);
+});
+
+
+////9
+//Using map
+
+const team3 = [`australia`, `italia`, `bélgica`, `venezuela`, `perú`, `argentina`];
+function calculateProbability () {
+    return `${(Math.random()*100).toFixed(2)}%`;
+}
+const probabilities = team3.map(calculateProbability);
+console.log(probabilities);
+
+
+////10
+//Using filter
+
+const team4 = [`australia`, `italia`, `bélgica`, `venezuela`, `perú`, `argentina`];
+const teamsWithoutMessi = team4.filter((team, index, array) => {
+    if (team.toLowerCase() === `argentina`) return false;
+    return true;
+});
+console.log(teamsWithoutMessi);
+
+
+////11
+//Using reduce
+
+const transactionValues = [
+    109,
+    -182,
+    20,
+    63,
+    -55,
+    190
+];
+const totalAmount = transactionValues.reduce(
+    (accumulate, amount) => {
+        return accumulate + amount;
+    }, 100 //initial value
+);
+console.log(totalAmount);
+
+const welcomeTeams = teams.reduce(
+    (_string, team, index2) => {
+        return _string + " " + team + ",";
+    }, "Hellow everyone. We welcome the following teams to the tournament:"
+);
+console.log(welcomeTeams);
