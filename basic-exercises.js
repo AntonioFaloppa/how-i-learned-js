@@ -254,4 +254,3 @@ window.onload = () => {
     let excuse = document.querySelector("#excuse");
     excuse.innerHTML = sentenceGenerator(who, action, what, time);
 }
-////19
