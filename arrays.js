@@ -239,3 +239,43 @@ const welcomeTeams = teams.reduce(
     }, "Hellow everyone. We welcome the following teams to the tournament:"
 );
 console.log(welcomeTeams);
+
+
+////12
+//Using some and every
+
+const team5 = [`australia`, `italia`, `bélgica`, `venezuela`, `perú`, `argentina`];
+console.log(team5.some((team) => team.charAt(0) === "d"));
+console.log(team5.every((team) => typeof team === "string"));
+
+////13
+//Using Splice
+
+let y = [14, 3, 3245, 234, 52, 345, 3, 45, 23, 77];
+y.splice(2,4,'a');  //returns [3245, 234, 52, 345] 
+console.log(y); // [14, 3, 'a', 3, 45, 23, 77]
+
+let x = [14, 3, 3245, 234, 52, 345, 3, 45, 23, 77];
+x.splice(2,0,'a');  //returns [] 
+console.log(x); // [14, 3, 'a', 3245, 234, 52, 345, 3, 45, 23, 77]
+
+////14
+//Using Sort and Reverse
+
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();
+console.log(fruits); //[ 'Apple', 'Banana', 'Mango', 'Orange' ] 
+fruits.reverse();
+console.log(fruits); //[ 'Orange', 'Mango', 'Banana', 'Apple' ]
+
+let points = [40, 100, 1, 5, 25, 10];
+points.sort(function (a, b) {return a - b});
+console.log(points); //[ 1, 5, 10, 25, 40, 100 ] 
+
+let cars = [
+    {type:"Volvo", year:2016},
+    {type:"Saab", year:2001},
+    {type:"BMW", year:2010}
+];
+cars.sort(function(a, b){return a.year - b.year});
+console.log(cars); //[ { type: 'Saab', year: 2001 },{ type: 'BMW', year: 2010 },{ type: 'Volvo', year: 2016 } ]
