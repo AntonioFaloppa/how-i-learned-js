@@ -27,7 +27,6 @@ function hacerAlmuerzo (ingredientes, metodoDeCocina) {
 console.log(hacerAlmuerzo(comprarIngredientes(), mezclar));
 console.log(hacerAlmuerzo(comprarIngredientes(), freir));
 
-
 ////2
 //Throwing dice 6 times and total sum of the results
 
@@ -55,7 +54,6 @@ console.log(player1);
 console.log(player2);
 console.log(total1);
 console.log(total2);
-
 
 ////3
 //Throwing dice until result is 6
@@ -100,7 +98,6 @@ if(result111 === 6 && result222 === 6) {
 console.log(player111);
 console.log(player222);
 
-
 ////5
 //Throwing dice and then choosing the number of cards resulted from the number of the dice (fixed times on the for loop, it can change)
 
@@ -127,7 +124,6 @@ for (let time = 1; time < 6; time++) {
     player1Results.Cards.push(cards);
 }
 console.log(player1Results);
-
 
 ////6
 //Choose a card when certain value es reached
@@ -172,7 +168,6 @@ for (let [key, value] of Object.entries(dog)) {
     console.log(`${key}:${value}`);
 };
 
-
 ////8
 //Using forEach two ways to do it
 
@@ -192,7 +187,6 @@ team2.forEach((team, index, _team) => {
     console.log(`${team} tiene una probabilidad de ${(Math.random()* 100).toFixed(2)}%`);
 });
 
-
 ////9
 //Using map
 
@@ -203,7 +197,6 @@ function calculateProbability () {
 const probabilities = team3.map(calculateProbability);
 console.log(probabilities);
 
-
 ////10
 //Using filter
 
@@ -213,7 +206,6 @@ const teamsWithoutMessi = team4.filter((team, index, array) => {
     return true;
 });
 console.log(teamsWithoutMessi);
-
 
 ////11
 //Using reduce
@@ -239,7 +231,6 @@ const welcomeTeams = teams.reduce(
     }, "Hellow everyone. We welcome the following teams to the tournament:"
 );
 console.log(welcomeTeams);
-
 
 ////12
 //Using some and every
@@ -279,3 +270,37 @@ let cars = [
 ];
 cars.sort(function(a, b){return a.year - b.year});
 console.log(cars); //[ { type: 'Saab', year: 2001 },{ type: 'BMW', year: 2010 },{ type: 'Volvo', year: 2016 } ]
+
+////15
+//Creating random array
+
+function generateRandomArray()
+{
+	let auxArray = [];
+	let randomLength = Math.floor(Math.random()*100);
+	for(let i = 0;i<randomLength;i++) auxArray.push(Math.floor(Math.random()*100));
+	return auxArray;	
+}
+let myStupidArray = generateRandomArray();
+
+////16
+//Count letter of a sentence in an object
+
+let par = "Lorem ipsum dolor sit amet consectetur adipiscing elit Curabitur eget bibendum turpis Curabitur scelerisque eros ultricies venenatis mi at tempor nisl Integer tincidunt accumsan cursus"
+let counts = {};
+
+for(let i in par){
+    const letter = par[i].toLowerCase();
+    console.log(letter);
+    if(letter == " ") continue;
+    else if(counts[letter] == undefined){
+        console.log("Found "+letter+" for the first time");
+        counts[letter] = 1;
+    } 
+    else{
+        console.log("Found "+letter+" more than once");
+        counts[letter] = counts[letter] + 1;
+    };
+};
+console.log(counts);
+console.log(par.length);
